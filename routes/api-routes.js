@@ -10,5 +10,14 @@ module.exports = (app) => {
             }
         });
     });
+
+    app.put("/api/workouts/:workout", ({ params, body }, res) => {
+      db.Workout.findOneAndUpdate({ _id: params.id},
+                                  {$push: {excercises:body }},
+                                  { upsert: true, useFindandModify:false},
+                                  updatedWorkout => {
+                                      res.json(updatedWorkout);
+                                  })
+    });
   
 }
