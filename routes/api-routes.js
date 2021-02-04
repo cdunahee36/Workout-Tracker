@@ -11,6 +11,16 @@ module.exports = (app) => {
         });
     });
 
+    app.get("/api/workouts/range", (req, res) => {
+      db.Workout.find({}, (err, range) => {
+          if(err){
+              console.log(err);
+          } else {
+              res.json(range)
+          }
+      });
+    });
+
     app.put("/api/workouts/:workout", ({ params, body }, res) => {
       db.Workout.findOneAndUpdate({ _id: params.id},
                                   {$push: {excercises:body }},

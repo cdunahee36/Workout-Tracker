@@ -23,6 +23,8 @@ mongoose.connect(
   }
 );
 
+//require('./seeders/seed')
+
 require('./routes/html-routes')(app)
 require('./routes/api-routes')(app)
 
