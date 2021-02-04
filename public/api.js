@@ -1,3 +1,5 @@
+require("../models");
+
 const API = {
   async getLastWorkout() {
     let res;
