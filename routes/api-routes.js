@@ -19,5 +19,11 @@ module.exports = (app) => {
                                       res.json(updatedWorkout);
                                   })
     });
+
+    app.post('/api/workouts', (req,res) => {
+      db.Workout.create({}).then(newWorkout => {
+          res.json(newWorkout);
+      });
+    });
   
 }
