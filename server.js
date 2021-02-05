@@ -1,4 +1,5 @@
 //The packages are installed here
+
 const express = require('express');
 const logger = require('morgan');
 const mongoose = require('mongoose');
@@ -13,6 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //This makes the app files public
+
 app.use(express.static("public"));
 
 //This connects the app to heroku or localhost
